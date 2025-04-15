@@ -1,7 +1,6 @@
 'use client';
 
-import { FC, useState } from "react";
-import { generateCbaDraft } from "./utils/openai";
+import { useState } from "react";
 import { createWordDoc, downloadWordDoc, previewWordDoc } from "./utils/msWord";
 
 export default function Home() {
