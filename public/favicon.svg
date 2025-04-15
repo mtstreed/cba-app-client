@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document background -->
+  <rect x="6" y="3" width="20" height="26" rx="2" fill="#7fb8e6"/>
+  
+  <!-- Document lines -->
+  <rect x="10" y="9" width="12" height="2" rx="1" fill="white" fill-opacity="0.9"/>
+  <rect x="10" y="14" width="12" height="2" rx="1" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Leaf overlay -->
+  <path d="M16 15C16 15 20 15 22 17C24 19 24 23 24 23C24 23 20 23 18 21C16 19 16 15 16 15Z" fill="#5dbea3"/>
+  <path d="M16 15C16 15 12 15 10 17C8 19 8 23 8 23C8 23 12 23 14 21C16 19 16 15 16 15Z" fill="#5dbea3"/>
+  <path d="M16 15L16 26" stroke="#5dbea3" stroke-width="2"/>
+</svg> 
