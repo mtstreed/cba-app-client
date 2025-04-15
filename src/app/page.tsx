@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#e6f3ff] flex flex-col items-center p-8">
