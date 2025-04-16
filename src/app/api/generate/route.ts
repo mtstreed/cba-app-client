@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { generateCbaDraft } from '@/app/utils/openai';
 
-export const maxDuration = 20; 
+export const maxDuration = 2000; 
 
 export async function POST(request: Request) {
     try {
