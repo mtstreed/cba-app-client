@@ -17,7 +17,7 @@ export async function generateCbaDraft(projectDescription: string) {
                 content: "You are a helpful assistant that generates Community Benefits Agreement (CBA) drafts for renewable energy projects. Your outputs should be professional, well-structured, and use appropriate legal and technical terminology."
             }, {
                 role: "user",
-                content: `Please create a CBA draft for the following renewable energy project: ${projectDescription}. Since we are just testing this functionality, cut your response at 300 words.`
+                content: `Please create a CBA draft for the following renewable energy project: ${projectDescription}. Do not include anything other than the CBA draft, such as exhibits, examples, etc. Please keep this CBA to 10000 words or less.`
             }],
             temperature: 0.3,
         });
