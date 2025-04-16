@@ -14,10 +14,10 @@ export async function generateCbaDraft(projectDescription: string) {
             model: "gpt-4",
             messages: [{
                 role: "system",
-                content: "You are a helpful assistant that generates Community Benefits Agreement (CBA) drafts for renewable energy projects. Your outputs should be professional, well-structured, and use appropriate legal and technical terminology. CBA drafts should include legal definitions, recitals, deliniated community benefits, and the rights/access that the project developer gets in return."
+                content: "You are a helpful assistant that generates Community Benefits Agreement (CBA) drafts for renewable energy projects. Your outputs should be professional, well-structured, and use appropriate legal and technical terminology. CBA drafts should include legal definitions, recitals, deliniated community benefits, and the rights/access that the project developer gets in return, as well as anything else deemed important, but should not exceed 10000 words."
             }, {
                 role: "user",
-                content: `Please create a CBA draft for the following renewable energy project: ${projectDescription}. Do not include anything other than the CBA draft, such as exhibits, examples, etc. Please keep this CBA to 10000 words or less.`
+                content: `Please create a CBA draft for the following renewable energy project: ${projectDescription}. Do not include anything other than the CBA draft, such as exhibits, examples, etc. `
             }],
             temperature: 0.3,
         });
