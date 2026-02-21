@@ -9,6 +9,33 @@ export default function Home() {
   const [wordDocBlob, setWordDocBlob] = useState<Blob | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
+  // const handleRagGenerate = async () => {
+  //   try {
+  //     setIsGenerating(true);
+  //     const response = await fetch('/api/rag-generate', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ projectDescription }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Failed to generate document using RAG');
+  //     }
+
+  //     const { content } = await response.json();
+  //     setGeneratedContent(content);
+  //     const docBlob = await createWordDoc(content);
+  //     setWordDocBlob(docBlob);
+  //   } catch (error) {
+  //     console.error('Error generating document using RAG:', error);
+  //     alert('Failed to generate document using RAG. Please try again.');
+  //   } finally {
+  //     setIsGenerating(false);
+  //   }
+  // };
+
   const handleGenerate = async () => {
     try {
       setIsGenerating(true);
@@ -117,6 +144,14 @@ export default function Home() {
         >
           {isGenerating ? 'Generating...' : (generatedContent ? 'Generate New Draft' : 'Generate CBA Draft')}
         </button>
+
+        {/* <button
+          className="w-full px-8 py-4 bg-[#7fb8e6] text-white rounded-lg hover:bg-[#6aa8d8] transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg"
+          onClick={handleRagGenerate}
+          disabled={isGenerating || !projectDescription.trim()}
+        >
+          {isGenerating ? 'Generating...' : 'Generate Draft using RAG'}
+        </button> */}
 
         <div className="flex gap-4 mt-2">
           <button

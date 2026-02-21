@@ -16,7 +16,7 @@ export async function generateCbaDraft(projectDescription: string) {
                 role: "system",
                 content: `You are a helpful assistant that generates Community Benefits Agreement (CBA) drafts for renewable energy projects. 
                 Your outputs should be professional, well-structured, and use appropriate legal and technical terminology. 
-                CBA drafts should include legal definitions, recitals, deliniated community benefits, and the rights/access 
+                CBA drafts should include legal definitions, recitals, delineated community benefits, and the rights/access 
                 that the project developer gets in return, as well as anything else deemed important, but should not exceed 10000 words. 
                 Typical community benefits include community charity donations, community benefit funds to be managed by a local 
                 government, recreational buildings and activities, and local hiring and training programs, among other things.`
@@ -26,7 +26,7 @@ export async function generateCbaDraft(projectDescription: string) {
             }],
             temperature: 0.3,
         });
-        console.log(completion.choices[0].message.content || 'No content generated');
+        // console.log(completion.choices[0].message.content || 'No content generated');
         return completion.choices[0].message.content || 'No content generated';
     } catch (error) {
         console.error('Error in generateCbaDraft:', error);
