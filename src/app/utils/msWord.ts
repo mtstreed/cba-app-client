@@ -100,7 +100,8 @@ export async function previewWordDoc(content: string) {
 
         // Save the PDF
         const pdfBytes = await pdfDoc.save();
-        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const uint8 = Uint8Array.from(pdfBytes);
+        const blob = new Blob([uint8], { type: 'application/pdf' }); 
         const url = URL.createObjectURL(blob);
 
         // Open in a popup window with more width
