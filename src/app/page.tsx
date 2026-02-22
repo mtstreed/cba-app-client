@@ -89,12 +89,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#e6f3ff] flex flex-col items-center p-8">
       <div className="w-full max-w-2xl flex flex-col items-center gap-6">
-        <h1 className="text-[#0a1829] text-4xl font-bold mt-8">
-          Generate CBA Draft
+        
+        <h1 className="text-center text-black text-4xl font-bold mt-8">
+          Generate a Community Benefit Agreement (CBA) for your infrastructure project.
         </h1>
         
-        <h2 className="text-[#2d3748] text-xl">
-          Describe your renewable energy project.
+        <h2 className="text-center text-[#2d3748] text-xl">
+          <br/>
+          Describe your project.
         </h2>
 
         {!generatedContent && (
@@ -114,8 +116,8 @@ export default function Home() {
                 </svg>
               </div>
               <textarea
-                className="w-full h-32 p-4 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#5dbea3] focus:border-transparent text-[#1a202c] placeholder-[#4a5568]"
-                placeholder="Describe the project..."
+                className="w-full h-32 p-4 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#5dbea3] focus:border-transparent text-black placeholder-gray-400"
+                placeholder="Example: A 100MW solar farm in rural Arizona. Main community benefit should be $100,000 in a managed fund, and I want airtight land usage rights in return."
                 value={projectDescription}
                 onChange={(e) => setProjectDescription(e.target.value)}
                 disabled={isGenerating}
@@ -138,7 +140,7 @@ export default function Home() {
         )}
 
         <button
-          className="w-full px-8 py-4 bg-[#5dbea3] text-white rounded-lg hover:bg-[#4aab90] transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg"
+          className="w-full px-8 py-4 bg-emerald-300 text-white rounded-lg hover:bg-emerald-500 transition-colors disabled:opacity-80 disabled:cursor-not-allowed font-medium text-lg"
           onClick={generatedContent ? handleReset : handleGenerate}
           disabled={isGenerating || (!generatedContent && !projectDescription.trim())}
         >
@@ -146,7 +148,7 @@ export default function Home() {
         </button>
 
         {/* <button
-          className="w-full px-8 py-4 bg-[#7fb8e6] text-white rounded-lg hover:bg-[#6aa8d8] transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg"
+          className="w-full px-8 py-4 bg-sky-300 text-white rounded-lg hover:bg-sky-500 transition-colors disabled:opacity-80 disabled:cursor-not-allowed font-medium text-lg"
           onClick={handleRagGenerate}
           disabled={isGenerating || !projectDescription.trim()}
         >
@@ -155,14 +157,14 @@ export default function Home() {
 
         <div className="flex gap-4 mt-2">
           <button
-            className="px-8 py-3 bg-[#7fb8e6] text-white rounded-full hover:bg-[#6aa8d8] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-indigo-400 text-white rounded-full hover:bg-indigo-500 transition-colors disabled:opacity-80 disabled:cursor-not-allowed"
             onClick={handlePreview}
             disabled={!generatedContent || isGenerating}
           >
             Preview
           </button>
           <button
-            className="px-8 py-3 bg-[#5dbea3] text-white rounded-full hover:bg-[#4aab90] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-indigo-400 text-white rounded-full hover:bg-indigo-500 transition-colors disabled:opacity-80 disabled:cursor-not-allowed"
             onClick={handleDownload}
             disabled={!wordDocBlob || isGenerating}
           >
