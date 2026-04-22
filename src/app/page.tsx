@@ -149,10 +149,10 @@ export default function Home() {
 
         <button
           className="w-full px-8 py-4 bg-sky-300 text-white rounded-lg hover:bg-sky-500 transition-colors disabled:opacity-80 disabled:cursor-not-allowed font-medium text-lg"
-          onClick={handleRagGenerate}
-          disabled={isGenerating || !projectDescription.trim()}
+          onClick={generatedContent ? handleReset : handleRagGenerate}
+          disabled={isGenerating || (!generatedContent && !projectDescription.trim())}
         >
-          {isGenerating ? 'Generating...' : 'Generate Draft using RAG'}
+          {isGenerating ? 'Generating...' : (generatedContent ? 'Generate New Draft' : 'Generate Draft using RAG')}
         </button>
 
         <div className="flex gap-4 mt-2">
