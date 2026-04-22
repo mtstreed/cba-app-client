@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateRagCba } from "@/app/utils/langchain"; // adjust the import path if needed
+import { generateRagCba } from "@/app/utils/rag";
 
 export async function POST(req: NextRequest) {
   try {
