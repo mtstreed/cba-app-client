@@ -1,25 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateRagCba } from "@/app/utils/langchain"; // adjust the import path if needed
+import { generateRagCba } from "@/app/utils/rag";
+
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { question } = body;
+    const { projectDescription } = await req.json();
 
-    if (!question || typeof question !== "string") {
+    if (!projectDescription || typeof projectDescription !== "string") {
       return NextResponse.json(
-        { error: "Request body must include a 'question' string." },
+        { error: "Project description is required" },
         { status: 400 }
       );
     }
 
-    const result = await generateRagCba(question);
-
-    return NextResponse.json({ result });
-  } catch ( error ) {
-    console.error("Error in RAG route:", error);
+    const content = await generateRagCba(projectDescription);
+    return NextResponse.json({ content });
+  } catch (error) {
+    console.error("Error in RAG generate route:", error);
     return NextResponse.json(
-      { error: "An unexpected error occurred." },
+      { error: "Failed to generate CBA draft" },
       { status: 500 }
     );
   }
